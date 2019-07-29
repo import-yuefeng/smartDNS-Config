@@ -1,0 +1,49 @@
+{
+  "BindAddress": ":53",
+  "DebugHTTPAddress": "127.0.0.1:5555",
+  "PrimaryDNS": [
+    {
+      "Name": "China-114",
+      "Address": "114.114.114.114:53",
+      "Protocol": "udp",
+      "SOCKS5Address": "",
+      "Timeout": 6,
+      "EDNSClientSubnet": {
+        "Policy": "disable",
+        "ExternalIP": "",
+        "NoCookie": true
+      }
+    }
+  ],
+  "AlternativeDNS": [
+    {
+      "Name": "Google-8",
+      "Address": "8.8.8.8:53",
+      "Protocol": "udp",
+      "SOCKS5Address": "",
+      "Timeout": 6,
+      "EDNSClientSubnet": {
+        "Policy": "disable",
+        "ExternalIP": "",
+        "NoCookie": true
+      }
+    }
+  ],
+  "OnlyPrimaryDNS": false,
+  "IPv6UseAlternativeDNS": false,
+  "WhenPrimaryDNSAnswerNoneUse": "PrimaryDNS",
+  "IPNetworkFile": {
+    "Primary": "./ip_network_primary",
+    "Alternative": "./ip_network_alternative"
+  },
+  "DomainFile": {
+    "Primary": "./domain_primary",
+    "Alternative": "./domain_alternative",
+    "Matcher":  "regex-list"
+  },
+  "HostsFile": "./hosts_sample",
+  "MinimumTTL": 0,
+  "DomainTTLFile" : "./domain_ttl_sample",
+  "CacheSize" : 0,
+  "RejectQType": [255]
+}
