@@ -1,0 +1,41 @@
+sudo: true
+
+language: python
+  
+python:
+  - "3.7"
+
+env:
+  global:
+    - GH_REF="github.com/import-yuefeng/smartDNS-Config"
+
+before_install:
+  - sudo apt-get update
+  - sudo apt-get wget zip
+  - echo -e "machine github.com\n  login $GITHUB_TOKEN" > ~/.netrc
+  - mkdir git_repo
+  - cd git_repo
+  - git clone "https://${GH_REF}"
+
+dist:
+  ubuntu 16.04
+install:
+
+
+script:
+  - cd smartDNS-Config
+  - wget https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
+  - wget https://raw.githubusercontent.com/gaoyifan/china-operator-ip/ip-lists/china.txt
+  - python3.7 split-ip.py
+  - git config user.name $GIT_USER_NAME
+  - git config user.email $GIT_USER_EMAIL
+
+after_success:
+  - if [[ "$TRAVIS_PULL_REQUEST" == "false" && "$TRAVIS_EVENT_TYPE" == "cron" ]]; then
+   git add . ;
+   git commit -m "$(date +%Y-%m-%d) auto update configuration file ." ;
+   git push -q "https://${GITHUB_TOKEN}@${GH_REF}";
+   fi
+
+notifications:    
+  email: true
