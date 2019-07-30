@@ -29,7 +29,6 @@ script:
   - python3.7 split-ip.py
   - git config user.name $GIT_USER_NAME
   - git config user.email $GIT_USER_EMAIL
-  - export TRAVIS_EVENT_TYPE="cron"
   
 after_success:
   - if [[ "$TRAVIS_PULL_REQUEST" == "false" && "$TRAVIS_EVENT_TYPE" == "cron" ]]; then
