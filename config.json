@@ -39,7 +39,7 @@
   "DomainFile": {
     "Primary": "./domain_primary",
     "Alternative": "./domain_alternative",
-    "Matcher":  "regex-list"
+    "Matcher":  "suffix-tree"
   },
   "HostsFile": "./hosts_sample",
   "MinimumTTL": 0,
