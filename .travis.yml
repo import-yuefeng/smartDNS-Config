@@ -11,7 +11,7 @@ env:
 
 before_install:
   - sudo apt-get update
-  - sudo apt-get wget zip
+  - sudo apt-get install wget zip
   - echo -e "machine github.com\n  login $GITHUB_TOKEN" > ~/.netrc
   - mkdir git_repo
   - cd git_repo
