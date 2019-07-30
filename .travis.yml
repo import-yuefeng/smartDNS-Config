@@ -19,11 +19,11 @@ before_install:
 
 dist:
   ubuntu 16.04
-install:
-
 
 script:
   - cd smartDNS-Config
+  - rm accelerated-domains.china.conf || true 
+  - rm china.txt || true
   - wget https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
   - wget https://raw.githubusercontent.com/gaoyifan/china-operator-ip/ip-lists/china.txt
   - python3.7 split-ip.py
