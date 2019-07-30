@@ -1,5 +1,5 @@
 # smartDNS-Config
-The repo is configuration file for overture, it will help you "scientifically" use DNS server. Daily update!
+The repo is configuration file for smartDNS, it will help you "scientifically" use DNS server. Daily update!
 
 ## smartDNS-Config 是什么？
 
@@ -14,4 +14,6 @@ The repo is configuration file for overture, it will help you "scientifically" u
 ## 如何使用？
 
 请前往 [shawn1m/overture](https://github.com/shawn1m/overture) 下载符合你系统的 overture 软件，并在该目录下git clone 本项目替换默认配置文件，再运行overture即可。
+
+正在基于 overture 进行开发(smartDNS)，使其获得更多科学特性，敬请期待。
 
