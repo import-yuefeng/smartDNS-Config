@@ -17,6 +17,9 @@ The repo is configuration file for smartDNS, it will help you "scientifically" u
 ## 如何使用？
 
 请前往 [shawn1m/overture](https://github.com/shawn1m/overture) 下载符合你系统的 overture 软件，并在该目录下git clone 本项目替换默认配置文件，再运行overture即可。
+注意替换本地 DNS 服务器为 overture bindIP 地址。
+
+## 未来
 
 我 正在基于 overture 进行开发([smartDNS](https://github.com/import-yuefeng/smartDNS))，使其获得更多科学特性，不仅仅限于现在的overture 主从模式DNS，而是解决具有 N 个网络出口时，DNS 如何智能选择访问最顺畅的出口，并且能够自动学习产生 Fast-table，用于记录 domain <-> DNS server 的映射，来不断基于用户本地网络情况来优化访问不同网站的DNS解析情况。
 
